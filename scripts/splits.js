@@ -89,7 +89,7 @@ function CreateSplits(form) {
         o.document.write(DumpPaceTable((1609 * 26.2), minutes_marathon + (hours_marathon * 60), 0));
     }
 
-    o.document.write("<br><a href=\"splits.html\" class=\"btn btn-success btn-lg btn-block\">Go back to split entry</a>");
+    o.document.write("<br><a href=\"index.html\" class=\"btn btn-success btn-lg btn-block\">Go back to split entry</a>");
     o.document.write("</div><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"/><script src=\"bootstrap-3.3.5-dist/js/bootstrap.js\"/></body></html>");
     return;
 }
