@@ -50,6 +50,7 @@ function DumpPaceTable(pace_distance, pr_minutes, pr_seconds) {
 
 function CreateSplits(form) {
 
+    console.log("Create splits");
     var o = this;
     o.document.write(GenerateHtmlBoilerplate());
     var minutes_800 = parseInt(form.minutes_800.value);
