@@ -1,28 +1,51 @@
 <div ng-controller="AgeGradeController as agCtrl">
-    <div>
+    <!-- turn off the default validation and use the ng-validation -->
+    <form name="agForm"
+          ng-submit="agCtrl.estimateAgeGradeTime()"
+          novalidate>
 
-        <form name="agForm"
-              ng-submit="agCtrl.estimateAgeGradeTime()">
-            <H1>AG Calculator</H1>
-            <table border="0" cellpadding="1" cellspacing="1" width="50%">
-                <tr>
-                    <td>Age:
-                        <input ng-model="agCtrl.ag.age" type="number">
-                        <br>
-                        Gender:
-                        <select class="form-control" ng-model="agCtrl.ag.sex">
-                            <option value="">---Please select---</option>
-                            <option value="0">Female</option>
-                            <option value="1">Male</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-            <br>
+        <H1>AG Calculator</H1>
+        <br>
 
-            <input type="submit" class='btn btn-primary btn-lg btn-block' value="Build AG Table">
-        </form>
+        <div class="row">
+            <div class="form-group">
+                <div align=center class="col-xs-6">
+                    <style>
+                        div.centeredage {
+                            line-height: 32px;
+                        }
+                    </style>
+                    <div align=center class="col-xs-3">
+                        <div class="centeredage">
+                            Age
+                        </div>
+                    </div>
+                    <div align=center class="col-xs-3">
+                        <input class="input-block-level" ng-model="agCtrl.ag.age" type="number" required>
+                    </div>
+                </div>
 
-        <span ng-bind-html="agCtrl.table| unsafe"></span>
+                <div class="col-xs-6">
+                    <div class="btn-group button-width" data-toggle="buttons">
+                        <button ng-class="{'btn':true,'btn-default':true,'active':agCtrl.ag.sex == 0}" ng-click="agCtrl.setSex(0)">Female</button>
+                        <button ng-class="{'btn':true,'btn-default':true,'active':agCtrl.ag.sex == 1}" ng-click="agCtrl.setSex(1)">Male</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div align=center class="col-xs-12">
+                <p><br></p>
+                <input type="submit" class='btn btn-primary btn-lg btn-block' value="Build AG Table">
+            </div>
+        </div>
+    </form>
+
+    <!--<div> form valid: {{agForm.$valid}}</div>-->
+    <div class='row'>
+        <div align=left class="col-xs-12">
+            <span ng-bind-html="agCtrl.table| unsafe"></span>
+        </div>
     </div>
 </div>

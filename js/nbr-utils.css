@@ -10,11 +10,18 @@
 }
 
 table.stat th, table.stat td {
-    font-size: 77%;
+    font-size: 72%;
     font-family: "Myriad Web", Verdana, Helvetica, Arial, sans-serif;
 }
 
 tr.milestone td {
     background: greenyellow;;
     font-weight: bold;
+}
+
+.input-block-level {
+  display: block;
+  width: 110px;
+  min-height: 34px;        // Make inputs at least the height of their button counterpart
+  .box-sizing(border-box); // Makes inputs behave like true block-level elements
 }
