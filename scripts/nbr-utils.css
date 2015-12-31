@@ -1,10 +1,20 @@
 .nav-tabs > li, .nav-pills > li {
-    float:none;
-    display:inline-block;
-    *display:inline; /* ie7 fix */
-     zoom:1; /* hasLayout ie7 trigger */
+    float: none;
+    display: inline-block;
+    *display: inline; /* ie7 fix */
+    zoom: 1; /* hasLayout ie7 trigger */
 }
 
 .nav-pills {
-    text-align:center;
+    text-align: center;
+}
+
+table.stat th, table.stat td {
+    font-size: 77%;
+    font-family: "Myriad Web", Verdana, Helvetica, Arial, sans-serif;
+}
+
+tr.milestone td {
+    background: greenyellow;;
+    font-weight: bold;
 }

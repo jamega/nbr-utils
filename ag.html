@@ -1,30 +1,28 @@
-<html>
-<head>
-    <title>Age-Graded Results Calculator</title>
-    <script src="./scripts/ag.js"></script>
-    <script src="./scripts/ag_form_validate.js"></script>
-</head>
-<body>
-<form onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
-    <p>&nbsp;</p>
+<div ng-controller="AgeGradeController as agCtrl">
+    <div class="container-fluid">
 
-    <H1>AG Calculator</H1>
-    <table border="0" cellpadding="1" cellspacing="1" width="50%">
-        <tr>
-            <td>Age:<b> </b>
-                </font>
-                <input type="text" name="runner_age" size="3" onfocus="this.form.runner_age.value=''" maxlength="3"
-                       style="text-align: center">&nbsp;&nbsp;
-                <span style="color: #000000">Gender</span></font><font color="#000000" size="2"><font
-                        face="Verdana"><span style="color: #000000">:</span></font><b><font face="serif">
-                </font>
-                    <select size="1" name="runner_sex">
-                        <option value="0">Female</option>
-                        <option value="1" selected>Male</option>
-                    </select></b></font></p>
-        </tr>
-    </table>
-    <input type="button" value="Build AG Table" onclick="EstAGTime(this.form)">
-</form>
-</body>
-</html>
+        <form name="agForm"
+              ng-submit="agCtrl.estimateAgeGradeTime()">
+            <H1>AG Calculator</H1>
+            <table border="0" cellpadding="1" cellspacing="1" width="50%">
+                <tr>
+                    <td>Age:
+                        <input ng-model="agCtrl.ag.age" type="number">
+                        <br>
+                        Gender:
+                        <select class="form-control" ng-model="agCtrl.ag.sex">
+                            <option value="">---Please select---</option>
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <input type="submit" class='btn btn-primary btn-lg btn-block' value="Build AG Table">
+        </form>
+
+        <span ng-bind-html="agCtrl.table| unsafe"></span>
+    </div>
+</div>
