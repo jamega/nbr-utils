@@ -39,8 +39,8 @@
             var distance = 0;
             var distances = new Array(100, 200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 1609);
 
-            var pace_distance_km = (pace_distance / 1000);//.toFixed(2);
-            var pace_distance_miles = (pace_distance / 1609);//.toFixed(2);
+            var pace_distance_km = (pace_distance / 1000).toFixed(2);
+            var pace_distance_miles = (pace_distance / 1609).toFixed(2);
             var pace_distance_string = pace_distance + " meters"; //.toFixed(2)
             var pace_distance_string_short = pace_distance_string;
 
