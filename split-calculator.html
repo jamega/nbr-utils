@@ -1,113 +1,48 @@
-<!--<h1>{{splitCtrl.selection}}</h1>-->
-<div ng-show="splitCtrl.showSplits()">
-    <form onsubmit="return FrontPage_Form1_Validator(this)" language="JavaScript" name="FrontPage_Form1">
+<div ng-controller="SplitController as splitCtrl">
+    <div ng-hide="splitCtrl.showResults()">
+        <form name="splitForm" ng-submit="splitCtrl.calculateSplits()" novalidate>
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <H3>NBR Track Workout</h3>
+                    <h4>Split Calculator</H4>
+                </div>
+            </div>
 
-        <div class='row'>
-            <div class='col-xs-12'>
-                <H2>NBR Track Workout</h2>
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <p>Enter a PR (or McMillan Time) in any one (or multiple) of the following distances</p>
+                </div>
+            </div>
 
-                <h3>Split Calculator</H3>
+            <div ng-repeat="pr in splitCtrl.prs" class='row'>
+                <div class='col-xs-6'>
+                    <span class="pull-right">{{ pr.text }}</span>
+                </div>
+                <div class='col-xs-6'>
+                <span ng-show="pr.showHours">
+                    <input type="text" ng-model="pr.hours" name="hours_marathon" maxlength="1" size=3> :
+                </span>
+                    <input type="text" ng-model="pr.minutes" maxlength="2" size=3>
+                <span ng-hide="pr.showHours">
+                    : <input type="text" ng-model="pr.seconds" maxlength="2" size=3>
+                </span>
+                </div>
             </div>
-        </div>
 
-        <div class='row'>
-            <div class='col-xs-12'>
-                <p>
-                    Enter a PR (or McMillan Time) in any one (or multiple) of the following distances
-                </p>
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <p>
+                        <br>
+                        <input type="submit" class='btn btn-primary btn-lg btn-block' value="Calculate Splits">
+                    </p>
+                </div>
             </div>
-        </div>
+        </form>
+    </div>
+    <div ng-show="splitCtrl.showResults()" class="col-xs-12">
+        <span ng-bind-html="splitCtrl.splitTableHtml | unsafe"></span>
 
-        <div class='row'>
-            <div class='col-xs-6'>
-                <span class="pull-right">800m (Min:Sec)</span>
-            </div>
-            <div class='col-xs-6'>
-                <!--<input type="text" name="minutes_800b" placeholder="-:&#45;&#45;" title="XX-XX" pattern="[0-9]{1}:[0-5]{1}[0-9]{1}" maxlength="8" size=8>-->
-
-
-                <input type="text" name="minutes_800" maxlength="2" size=4>:<input type="text"
-                                                                                   name="seconds_800"
-                                                                                   maxlength="2" size=4>
-            </div>
-        </div>
-
-        <div class='row'>
-            <div class='col-xs-6'>
-                <span class="pull-right">Mile (Min:Sec)</span>
-            </div>
-            <div class='col-xs-6'>
-                <input type="text" name="minutes_mile" maxlength="2" size=4>:<input type="text"
-                                                                                    name="seconds_mile"
-                                                                                    maxlength="2" size=4>
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-6'>
-                <span class="pull-right">3k</span>
-            </div>
-            <div class='col-xs-6'>
-                <input type="text" name="minutes_3k" maxlength="2" size=4>:<input type="text"
-                                                                                  name="seconds_3k"
-                                                                                  maxlength="2" size=4>
-
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-6'>
-                <span class="pull-right">5k</span>
-            </div>
-            <div class='col-xs-6'>
-                <input type="text" name="minutes_5k" maxlength="2" size=4>:<input type="text"
-                                                                                  name="seconds_5k"
-                                                                                  maxlength="2" size=4>
-
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-6'>
-                <span class="pull-right">10k</span>
-            </div>
-            <div class='col-xs-6'>
-                <input type="text" name="minutes_10k" maxlength="2" size=4>:<input type="text"
-                                                                                   name="seconds_10k"
-                                                                                   maxlength="2" size=4>
-
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-6'><span class="pull-right">
-                 Half (Hour:Min)</span>
-            </div>
-            <div class='col-xs-6'>
-                <input type="text" name="hours_half_marathon" maxlength="1" size=4>:<input type="text"
-                                                                                           name="minutes_half_marathon"
-                                                                                           maxlength="2"
-                                                                                           size=4>
-
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-6'>
-                <span class="pull-right">Marathon (Hour:Min)</span>
-            </div>
-            <div class='col-xs-6'>
-                <input type="text" name="hours_marathon" maxlength="1" size=4>:<input type="text"
-                                                                                      name="minutes_marathon"
-                                                                                      maxlength="2"
-                                                                                      size=4>
-            </div>
-        </div>
-
-        <div class='row'>
-            <div class='col-xs-12'>
-                <p>
-                    <br>
-                <td COLSPAN="2"><input type="button" class='btn btn-primary btn-lg btn-block' value="Calculate Splits"
-                                       onclick="CreateSplits(this.form)"></td>
-                </p>
-            </div>
-        </div>
-
-    </form>
+        <br>
+        <button ng-click="splitCtrl.resetSplits()" class='btn btn-primary btn-lg btn-block'>Go back to split entry</button>
+    </div>
 </div>
