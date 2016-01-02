@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="./angular/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/splits.js"></script>
+    <script type="text/javascript" src="js/ag.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+    <script type="text/javascript" src="js/filters.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
@@ -47,7 +51,9 @@
             <li ng-class="{ active:splitCtrl.selection === 1 }">
                 <a href ng-click="splitCtrl.selectTab(1)">AG</a></li>
             <li ng-class="{ active:splitCtrl.selection === 2 }">
-                <a href ng-click="splitCtrl.selectTab(2)">About</a></li>
+                <a href ng-click="splitCtrl.selectTab(2)">Weather</a></li>
+            <li ng-class="{ active:splitCtrl.selection === 3 }">
+                <a href ng-click="splitCtrl.selectTab(3)">About</a></li>
         </ul>
     </section>
 
@@ -57,6 +63,10 @@
 
     <div ng-show="splitCtrl.showAgeGrade()">
         <ag-calculator></ag-calculator>
+    </div>
+
+    <div ng-show="splitCtrl.showWeather()">
+        <weather-page></weather-page>
     </div>
 
     <div ng-show="splitCtrl.showAbout()">

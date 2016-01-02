@@ -1,0 +1,302 @@
+{
+  "query": {
+    "count": 1,
+    "created": "2016-01-02T02:13:42Z",
+    "lang": "es",
+    "diagnostics": {
+      "publiclyCallable": "true",
+      "url": [
+        {
+          "execution-start-time": "1",
+          "execution-stop-time": "6",
+          "execution-time": "5",
+          "content": "http://unifiedgeo.geotech.yahoo.com:4080/geo/v1/geocode?q=brooklyn%2C%20ny&start=0&size=1&optionalfields=woe.ancestors&minconfidence=0.0001"
+        },
+        {
+          "execution-start-time": "9",
+          "execution-stop-time": "26",
+          "execution-time": "17",
+          "content": "http://weather.yahooapis.com/forecastrss?w=12589335"
+        }
+      ],
+      "javascript": {
+        "execution-start-time": "0",
+        "execution-stop-time": "9",
+        "execution-time": "8",
+        "instructions-used": "15867",
+        "table-name": "geo.places"
+      },
+      "user-time": "28",
+      "service-time": "22",
+      "build-version": "0.2.369"
+    },
+    "results": {
+      "channel": {
+        "title": "Yahoo! Weather - Brooklyn, NY",
+        "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Brooklyn__NY/*http://weather.yahoo.com/forecast/USNY0176_f.html",
+        "description": "Yahoo! Weather for Brooklyn, NY",
+        "language": "en-us",
+        "lastBuildDate": "Fri, 01 Jan 2016 8:55 pm EST",
+        "ttl": "60",
+        "location": {
+          "city": "Brooklyn",
+          "country": "United States",
+          "region": "NY"
+        },
+        "units": {
+          "distance": "mi",
+          "pressure": "in",
+          "speed": "mph",
+          "temperature": "F"
+        },
+        "wind": {
+          "chill": "29",
+          "direction": "260",
+          "speed": "14"
+        },
+        "atmosphere": {
+          "humidity": "60",
+          "pressure": "30.05",
+          "rising": "1",
+          "visibility": "10"
+        },
+        "astronomy": {
+          "sunrise": "7:18 am",
+          "sunset": "4:39 pm"
+        },
+        "image": {
+          "title": "Yahoo! Weather",
+          "width": "142",
+          "height": "18",
+          "link": "http://weather.yahoo.com",
+          "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+        },
+        "item": {
+          "title": "Conditions for Brooklyn, NY at 8:55 pm EST",
+          "lat": "40.66",
+          "long": "-73.95",
+          "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Brooklyn__NY/*http://weather.yahoo.com/forecast/USNY0176_f.html",
+          "pubDate": "Fri, 01 Jan 2016 8:55 pm EST",
+          "condition": {
+            "code": "33",
+            "date": "Fri, 01 Jan 2016 8:55 pm EST",
+            "temp": "37",
+            "text": "Fair"
+          },
+          "description": "\n
+          \
+          nCurrent
+          Conditions:
+          \
+          nFair,
+          37
+          F
+          \
+          n
+          Forecast:
+          \
+          nFri
+          -
+          Clear
+          .
+          High: 42
+          Low: 32
+          \
+          nSat
+          -
+          Sunny
+          .
+          High: 41
+          Low: 34
+          \
+          nSun
+          -
+          Mostly
+          Sunny
+          .
+          High: 44
+          Low: 29
+          \
+          nMon
+          -
+          Mostly
+          Sunny
+          .
+          High: 30
+          Low: 17
+          \
+          nTue
+          -
+          Sunny
+          .
+          High: 32
+          Low: 24
+          \
+          n
+          \
+          nFull
+          Forecast
+          at
+          Yahoo
+          !
+          Weather
+
+          \
+          n
+          (
+          provided
+          by
+          The
+          Weather
+          Channel
+          )
+          \
+          n
+          ","
+          forecast
+          ":[{"
+          code
+          ":"
+          31
+          ","
+          date
+          ":"
+          1
+          Jan
+          2016
+          ","
+          day
+          ":"
+          Fri
+          ","
+          high
+          ":"
+          42
+          ","
+          low
+          ":"
+          32
+          ","
+          text
+          ":"
+          Clear
+          "},{"
+          code
+          ":"
+          32
+          ","
+          date
+          ":"
+          2
+          Jan
+          2016
+          ","
+          day
+          ":"
+          Sat
+          ","
+          high
+          ":"
+          41
+          ","
+          low
+          ":"
+          34
+          ","
+          text
+          ":"
+          Sunny
+          "},{"
+          code
+          ":"
+          34
+          ","
+          date
+          ":"
+          3
+          Jan
+          2016
+          ","
+          day
+          ":"
+          Sun
+          ","
+          high
+          ":"
+          44
+          ","
+          low
+          ":"
+          29
+          ","
+          text
+          ":"
+          Mostly
+          Sunny
+          "},{"
+          code
+          ":"
+          34
+          ","
+          date
+          ":"
+          4
+          Jan
+          2016
+          ","
+          day
+          ":"
+          Mon
+          ","
+          high
+          ":"
+          30
+          ","
+          low
+          ":"
+          17
+          ","
+          text
+          ":"
+          Mostly
+          Sunny
+          "},{"
+          code
+          ":"
+          32
+          ","
+          date
+          ":"
+          5
+          Jan
+          2016
+          ","
+          day
+          ":"
+          Tue
+          ","
+          high
+          ":"
+          32
+          ","
+          low
+          ":"
+          24
+          ","
+          text
+          ":"
+          Sunny
+          "}],"
+          guid
+          ":{"
+          isPermaLink
+          ":"
+          false
+          ","
+          content
+          ":"
+          USNY0176_2016_01_05_7_00_EST
+          "}}}}}}
+
+
+          CelsiusFahrenheit
