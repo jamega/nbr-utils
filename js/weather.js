@@ -53,6 +53,8 @@
             str += "<tr>";
             str += "<td>Humidity</td><td>";
             str += x.query.results.channel.atmosphere.humidity + "%";
+            str += "</td><td>";
+            str += x.query.results.channel.atmosphere.humidity + "%";
             str += "</td>";
             str += "</tr>";
             str += "<tr>";
