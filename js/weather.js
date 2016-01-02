@@ -5,14 +5,14 @@
     app.controller('WeatherController', ['$http', function ($http) {
         var weatherUrl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22brooklyn%2C%20ny%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
 
-        var store = this;
+        var weatherCtrl = this;
         this.prettyWeather = [];
         this.weather = [];
 
         this.toCelsius = function(text) {
             var f = parseFloat(text);
-            var c = f - 32 * (5 / 9);
-            c = c.toFixed(1);
+            var c = ((f - 32) * 5 )/ 9;
+            c = c.toFixed(0);
             return c.toString();
         };
 
@@ -70,9 +70,9 @@
         };
 
         $http({method: 'GET', url: weatherUrl}).success(function (data) {
-            store.weather = data;
-            store.prettyWeather = store.makeWeatherPretty(store.weather);
-        });
+            weatherCtrl.weather = data;
+            weatherCtrl.prettyWeather = weatherCtrl.makeWeatherPretty(weatherCtrl.weather);
+        })
     }]);
 })();
 
