@@ -46,7 +46,7 @@
             str += "</tr>";
             str += "<tr>";
             str += "<td>Pressure</td><td>";
-            str += x.query.results.channel.atmosphere.pressure + " inches";
+            str += x.query.results.channel.atmosphere.pressure + "\"";
             str += "</td><td>" + this.toMillibars(x.query.results.channel.atmosphere.pressure) + " MB";
             str += "</td>";
             str += "</tr>";
