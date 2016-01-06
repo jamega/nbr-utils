@@ -1,5 +1,8 @@
 <div ng-controller="WeatherController as weatherCtrl">
         <div align=left class="col-xs-12">
             <span ng-bind-html="weatherCtrl.prettyWeather| unsafe"></span>
+
+            <p ng-if="weatherCtrl.errors"> {{ weatherCtrl.errors}} </p>
         </div>
+    <div><cite>Weather data retrieved via Yahoo public API</cite></div>
 </div>

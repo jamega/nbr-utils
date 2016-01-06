@@ -9,26 +9,26 @@
         this.prettyWeather = [];
         this.weather = [];
 
-        this.toCelsius = function(text) {
+        this.toCelsius = function (text) {
             var f = parseFloat(text);
-            var c = ((f - 32) * 5 )/ 9;
+            var c = ((f - 32) * 5 ) / 9;
             c = c.toFixed(0);
             return c.toString();
         };
 
-        this.toMillibars = function(text) {
+        this.toMillibars = function (text) {
             var inches = parseFloat(text);
             var mb = 33.8637526 * inches;
             mb = mb.toFixed(0);
             return mb;
         };
 
-        this.toKnots = function(mph) {
+        this.toKnots = function (mph) {
             var mph = parseFloat(mph);
-            return (mph/1.151).toFixed(0);
+            return (mph / 1.151).toFixed(0);
         }
 
-        this.toKph = function(mph) {
+        this.toKph = function (mph) {
             var mph = parseFloat(mph);
             return (mph * 1.609).toFixed(0);
         }
@@ -69,10 +69,16 @@
             return (str);
         };
 
-        $http({method: 'GET', url: weatherUrl}).success(function (data) {
-            weatherCtrl.weather = data;
-            weatherCtrl.prettyWeather = weatherCtrl.makeWeatherPretty(weatherCtrl.weather);
-        })
+        weatherCtrl.errors = null;
+        $http({method: 'GET', url: weatherUrl})
+            .success(function (data) {
+                weatherCtrl.errors = null;
+                weatherCtrl.weather = data;
+                weatherCtrl.prettyWeather = weatherCtrl.makeWeatherPretty(weatherCtrl.weather);
+            })
+            .catch(function(data) {
+                weatherCtrl.errors = "Error retrieving data from yahoo weather API";
+            });
     }]);
 })();
 
