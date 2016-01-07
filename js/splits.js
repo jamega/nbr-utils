@@ -80,7 +80,7 @@
         this.prs = [
             {
                 "event": "800",
-                "text": "800m (Min: Sec)",
+                "text": "800m (Min:Sec)",
                 "distance": 800.0,
                 "showHours": false,
                 "hours": "",
@@ -89,7 +89,7 @@
             },
             {
                 "event": "Mile",
-                "text": "Mile (Min: Sec)",
+                "text": "Mile (Min:Sec)",
                 "distance": 1609.0,
                 "showHours": false,
                 "hours": "",
