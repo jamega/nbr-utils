@@ -21,8 +21,9 @@ The Age Grading (handicap tables) used in this tool are based on world record pe
 >90% = World class
 >80% = National class
 >70% = Regional class
+
 The Age-graded tables were researched and compiled by the WMA (formerly WAVA), the world governing body for Masters Track & Field, Long Distance Running and Racewalking. Age Grade tables exist for ages 8 through 100 for all major events.
 
-About nbr-utils
+#About nbr-utils
 
 nbr-utils is an open-source set of utilities for runners. 
