@@ -27,4 +27,4 @@ The Age-graded tables were researched and compiled by the WMA (formerly WAVA), t
 
 #Weather
 
-This piece of feature creep could use some help, right now it tells me exactly what I need to know about the weather where I live.  A convenient enhancement would be to support locations based on IP address.
+Right now it tells me the minimum amount of information I need to know about the weather where I live to make appropriate clothing decisions for my runs.  A convenient enhancement would be to support locations based on IP address.
