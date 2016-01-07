@@ -25,3 +25,6 @@ The Age Grading (handicap tables) used in this tool are based on world record pe
 
 The Age-graded tables were researched and compiled by the WMA (formerly WAVA), the world governing body for Masters Track & Field, Long Distance Running and Racewalking. Age Grade tables exist for ages 8 through 100 for all major events.
 
+#Weather
+
+This piece of feature creep could use some help, right now it tells me exactly what I need to know about the weather where I live.  A convenient enhancement would be to support locations based on IP address.
