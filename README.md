@@ -1,5 +1,6 @@
 # nbr-utils
-NBR Training Utilities (Split Calculator, AG tool, ...)
+
+nbr-utils is an open-source set of training utilities for runners. 
 
 #Splits
 
@@ -17,13 +18,10 @@ Age Grading: how it works
 
 The Age Grading (handicap tables) used in this tool are based on world record performances in each discipline/age group. By comparing against these times which improve/degrade with age one can get a better handle how one's performances compare with their performances at previous ages and those in different age classes.
 
->100% = World record level
->90% = World class
->80% = National class
->70% = Regional class
+100% = World record level
+90% = World class
+80% = National class
+70% = Regional class
 
 The Age-graded tables were researched and compiled by the WMA (formerly WAVA), the world governing body for Masters Track & Field, Long Distance Running and Racewalking. Age Grade tables exist for ages 8 through 100 for all major events.
 
-#About nbr-utils
-
-nbr-utils is an open-source set of utilities for runners. 
