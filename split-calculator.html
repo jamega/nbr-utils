@@ -20,11 +20,11 @@
                 </div>
                 <div class='col-xs-6'>
                 <span ng-show="pr.showHours">
-                    <input type="text" ng-model="pr.hours" name="hours_marathon" maxlength="1" size=3> :
+                    <input class="number-input" type="number" ng-model="pr.hours" name="hours_marathon" maxlength="1" size=1> :
                 </span>
-                    <input type="text" ng-model="pr.minutes" maxlength="2" size=3>
+                    <input class="number-input" type="number" ng-model="pr.minutes" maxlength="2" size=0.5>
                 <span ng-hide="pr.showHours">
-                    : <input type="text" ng-model="pr.seconds" maxlength="2" size=3>
+                    : <input class="number-input" type="number" ng-model="pr.seconds" maxlength="2" size=0.5>
                 </span>
                 </div>
             </div>

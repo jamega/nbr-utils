@@ -25,3 +25,14 @@ tr.milestone td {
   min-height: 34px;        // Make inputs at least the height of their button counterpart
   .box-sizing(border-box); // Makes inputs behave like true block-level elements
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.number-input {
+    width: 40px;
+}
