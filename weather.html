@@ -2,8 +2,6 @@
     <div align=left class="col-xs-12">
         <span ng-bind-html="weatherCtrl.prettyWeather | unsafe"></span>
 
-        <br>
-
         <h3>Running Outfit Best Guess</h3>
         <div ng-repeat="o in weatherCtrl.outfit">
             <li>{{o}}</li>
