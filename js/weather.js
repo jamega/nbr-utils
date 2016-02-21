@@ -8,6 +8,7 @@
         var weatherCtrl = this;
         this.prettyWeather = [];
         this.weather = [];
+        this.outfit = [];
 
         this.toCelsius = function (text) {
             var f = parseFloat(text);
@@ -69,12 +70,90 @@
             return (str);
         };
 
+        this.getOutfit = function (data) {
+            var x = data;
+            var o = [];
+            var temperature = x.query.results.channel.item.condition.temp;
+
+            if (temperature > 110)
+            {
+                o.push("No shirt");
+                o.push("Short shorts");
+            }
+            if (temperature >= 60 && temperature < 110)
+            {
+                o.push("Singlet/Sports Bra");
+                o.push("Short Shorts");
+                o.push("Ankle Socks");
+            }
+            else if (temperature >= 52 && temperature < 60)
+            {
+                o.push("Light long sleeve");
+                o.push("Short Shorts");
+                o.push("Ankle Socks");
+            }
+            else if (temperature >= 44 && temperature < 52)
+            {
+                o.push("Thin gloves");
+                o.push("Nike Combat Turtleneck");
+                o.push("Light long sleeve");
+                o.push("Shorts (or tights)");
+                o.push("1/4 length socks");
+            }
+            else if (temperature >= 38 && temperature < 44)
+            {
+                o.push("Hat");
+                o.push("Thin gloves");
+                o.push("Nike Combat Turtleneck");
+                o.push("Light long sleeve");
+                o.push("Tights");
+                o.push("1/4 length socks");
+            }
+            else if (temperature >= 32 && temperature < 38)
+            {
+                o.push("Hat");
+                o.push("Medium gloves");
+                o.push("Nike Combat Turtleneck");
+                o.push("Quarter-zip long sleeve");
+                o.push("Tights");
+                o.push("1/4 length socks");
+            }
+            else if (temperature >= 26 && temperature < 32)
+            {
+                o.push("hat");
+                o.push("Medium gloves");
+                o.push("Light jacket");
+                o.push("Nike Combat Turtleneck");
+                o.push("Quarter-zip long sleeve");
+                o.push("Tights");
+                o.push("1/4 length socks");
+
+            }
+            else if (temperature >= 0 && temperature < 26)
+            {
+                o.push("Hat");
+                o.push("Mittens/gloves");
+                o.push("Light jacket");
+                o.push("Nike Combat Turtleneck");
+                o.push("Quarter-zip long sleeve");
+                o.push("Tights");
+                o.push("Under-tights");
+                o.push("1/4 length socks");
+            }
+            else {
+                o.push("you're on your own today");
+            }
+
+            return o;
+        };
+
         weatherCtrl.errors = null;
         $http({method: 'GET', url: weatherUrl})
             .success(function (data) {
                 weatherCtrl.errors = null;
                 weatherCtrl.weather = data;
                 weatherCtrl.prettyWeather = weatherCtrl.makeWeatherPretty(weatherCtrl.weather);
+                weatherCtrl.outfit = weatherCtrl.getOutfit(weatherCtrl.weather);
             })
             .catch(function(data) {
                 weatherCtrl.errors = "Error retrieving data from yahoo weather API";
