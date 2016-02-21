@@ -36,7 +36,7 @@
 
         this.makeWeatherPretty = function (data) {
             var x = data;
-            var str = "<h3>" + x.query.results.channel.item.title + "</h3>";
+            var str = "<h4>" + x.query.results.channel.item.title + "</h4>";
             str += "<table class=\"table table-striped table-condensed table-bordered table-hover \">";
             str += "<tr><th></th><th>Imperial</th><th>Metric</th></tr><tr>";
             str += "<tr>";
