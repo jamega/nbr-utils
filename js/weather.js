@@ -17,11 +17,11 @@
             return c.toString();
         };
 
-        this.toMillibars = function (text) {
-            var inches = parseFloat(text);
-            var mb = 33.8637526 * inches;
-            mb = mb.toFixed(0);
-            return mb;
+        this.toInchesOfMercury = function (text) {
+            var mb = parseFloat(text);
+            var inches =  mb / 33.8637526;
+            inches = inches.toFixed(2);
+            return inches;
         };
 
         this.toKnots = function (mph) {
@@ -47,8 +47,8 @@
             str += "</tr>";
             str += "<tr>";
             str += "<td>Pressure</td><td>";
-            str += x.query.results.channel.atmosphere.pressure + "\"";
-            str += "</td><td>" + this.toMillibars(x.query.results.channel.atmosphere.pressure) + " MB";
+            str += this.toInchesOfMercury(x.query.results.channel.atmosphere.pressure) + "\"";
+            str += "</td><td>" + x.query.results.channel.atmosphere.pressure + " MB";
             str += "</td>";
             str += "</tr>";
             str += "<tr>";
@@ -75,12 +75,12 @@
             var o = [];
             var temperature = x.query.results.channel.item.condition.temp;
 
-            if (temperature > 110)
+            if (temperature >= 100)
             {
                 o.push("No shirt");
                 o.push("Short shorts");
             }
-            if (temperature >= 60 && temperature < 110)
+            if (temperature >= 60 && temperature < 100)
             {
                 o.push("Singlet/Sports Bra");
                 o.push("Short Shorts");
@@ -98,7 +98,7 @@
                 o.push("Nike Combat Turtleneck");
                 o.push("Light long sleeve");
                 o.push("Shorts (or tights)");
-                o.push("1/4 length socks");
+                o.push("Ankle or 1/4 length socks");
             }
             else if (temperature >= 38 && temperature < 44)
             {
